@@ -1,3 +1,0 @@
-# Student_Management_System
-Assignmen
-StoryBoard

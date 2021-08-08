@@ -4,30 +4,39 @@ import { BoardService } from '../board.service';
 
 @Component({
   selector: 'app-task-dialog',
+  styleUrls: ['./task-dialog.component.scss'],
   template: `
     <h1 mat-dialog-title>Task</h1>
+
     <div mat-dialog-content class="content">
-      <mat-form-field>
+      
+    <mat-form-field>
         <textarea
           placeholder="Task description"
           matInput
-          [(ngModel)]="data.task.description"
-        ></textarea>
-      </mat-form-field>
-      <br />
-      <mat-button-toggle-group
+          [(ngModel)]="data.task.description">
+        </textarea>
+    </mat-form-field>
+      
+    <br/>
+      
+    <mat-button-toggle-group
         #group="matButtonToggleGroup"
-        [(ngModel)]="data.task.label"
-      >
+        [(ngModel)]="data.task.label">
+        
         <mat-button-toggle *ngFor="let opt of labelOptions" [value]="opt">
-          <mat-icon [ngClass]="opt">{{
-            opt === 'gray' ? 'check_circle' : 'lens'
-          }}</mat-icon>
+          <mat-icon [ngClass]="opt">
+          {{ opt === 'gray' ? 'check_circle' : 'lens' }}
+          </mat-icon>
         </mat-button-toggle>
-      </mat-button-toggle-group>
+      
+        </mat-button-toggle-group>
+
     </div>
+    
     <div mat-dialog-actions>
-      <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
+      
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
         {{ data.isNew ? 'Add Task' : 'Update Task' }}
       </button>
 
@@ -35,11 +44,9 @@ import { BoardService } from '../board.service';
         (delete)="handleTaskDelete()"
         *ngIf="!data.isNew">
       </app-delete-button>
-    </div>
+    
+      </div>
   `,
-  styles: [
-    './dialog.scss'
-  ]
 })
 export class TaskDialogComponent implements OnInit {
 

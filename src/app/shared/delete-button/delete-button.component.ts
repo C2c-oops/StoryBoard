@@ -10,6 +10,7 @@ export class DeleteButtonComponent implements OnInit {
   canDelete!: boolean;
 
   @Output() delete = new EventEmitter<boolean>();
+  
   constructor() { }
 
   ngOnInit(): void {

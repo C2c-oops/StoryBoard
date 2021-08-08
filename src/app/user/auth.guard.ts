@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
 import { SnackService } from '../services/snack.service';
 
 @Injectable({
@@ -20,7 +19,7 @@ export class AuthGuard implements CanActivate {
     if (!isLoggedIn) {
       this.snack.authError();
     }
-    return isLoggedIn
+    return isLoggedIn;
   }
 
  /*  canActivate(

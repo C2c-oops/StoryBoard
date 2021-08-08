@@ -1,6 +1,8 @@
 <mat-card>
 	<div *ngIf = "isSignUp">
-		<h3>Create Account</h3>
+		<h3>
+			Create Account
+		</h3>
 
 		<button mat-stroked-button (click) = "changeType('login')">
 			Already have an account?
@@ -8,28 +10,34 @@
 	</div>
 
 	<div *ngIf = "isLogin">
-		<h3>Sign In</h3>
+		<h3>
+			Sign In
+		</h3>
+		
 		<button size = "small" mat-stroked-button (click) = "changeType('signup')">
 			New User?
 		</button>
 	</div>
 
 	<div *ngIf = "isPasswordReset">
-		<h3>Reset Password</h3>
+		<h3>
+			Reset Password
+		</h3>
+		
 		<button size = "small" mat-button (click) = "changeType('login')">
 			Back
 		</button>
 	</div>
 
 	<form [formGroup] = "form" (ngSubmit) = "onSubmit()">
+		
 		<mat-form-field [color] = "email && email.valid && 'accent'">
 			<input
 				matInput
 				formControlName = "email"
 				type = "email"
 				placeholder = "Email"
-				autocomplete = "off"
-			/>
+				autocomplete = "off"/>
 
 			<mat-error *ngIf = "email && email.invalid && email.dirty">
 				You must enter a valid email address
@@ -43,28 +51,27 @@
 				formControlName = "password"
 				type = "password"
 				placeholder="Password"
-				autocapitalize="off"
-			/>
+				autocapitalize="off"/>
 
 			<mat-error *ngIf = "password && password.invalid && password.dirty">
 				Password must be at least 6 characters long
 			</mat-error>
+
 		</mat-form-field>
 
 		<mat-form-field [color] = "passwordDoesMatch ? 'accent' : 'warn'"
 			*ngIf = "isSignUp">
-
 			<input
 				matInput
 				formControlName = "passwordConfirm"
 				type="password"
 				placeholder="Confirm Password"
-				autocomplete="off"
-			/>
+				autocomplete="off"/>
 
 			<mat-error *ngIf = "passwordConfirm && passwordConfirm.dirty && !passwordDoesMatch">
 				Password does not match
 			</mat-error>
+
 		</mat-form-field>
 
 		<mat-error class = "server-error">
@@ -87,11 +94,14 @@
 			[disabled] = "form.invalid || !passwordDoesMatch || loading">
 			Submit
 		</button>
+
 	</form>
+
 	<button
 		mat-button
 		*ngIf = "isLogin && !isPasswordReset"
 		(click) = "changeType('reset')">
 		Forgot password?
 	</button>
+
 </mat-card>

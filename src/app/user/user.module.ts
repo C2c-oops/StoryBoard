@@ -11,7 +11,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    LoginPageComponent,
     GoogleSigninDirective,
     EmailLoginComponent,
     LoginPageComponent
@@ -20,7 +19,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     UserRoutingModule,
     SharedModule,
-    UserRoutingModule,
     ReactiveFormsModule
   ]
 })

@@ -1,14 +1,7 @@
 button {
-	img {
-	    width: 1.25em;
-	}
-    }
-    
-    
-    :host {
-	text-align: center;
-    }
-    
-    .logout {
-	padding-top: 5em;
-    }
+	img { width: 1.25em; }
+}
+
+:host { text-align: center; }
+
+.logout { padding-top: 5em; }

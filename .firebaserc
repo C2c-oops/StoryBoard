@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "story-board-1d1f1": {
+      "hosting": {
+        "StoryBoard": [
+          "story-board-1d1f1"
+        ]
+      }
+    }
+  }
+}

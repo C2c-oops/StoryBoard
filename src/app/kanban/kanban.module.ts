@@ -9,12 +9,16 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { BoardComponent } from './board/board.component';
 import { BoardsListComponent } from './boards-list/boards-list.component';
+import { BoardDialogComponent } from './dialogs/board-dialog.component';
+import { TaskDialogComponent } from './dialogs/task-dialog.component';
 
 
 @NgModule({
   declarations: [
     BoardComponent,
-    BoardsListComponent
+    BoardsListComponent,
+    BoardDialogComponent,
+    TaskDialogComponent
   ],
   imports: [
     CommonModule,
@@ -24,6 +28,7 @@ import { BoardsListComponent } from './boards-list/boards-list.component';
     DragDropModule,
     MatDialogModule,
     MatButtonToggleModule
-  ]
+  ],
+  entryComponents: [BoardDialogComponent, TaskDialogComponent]
 })
 export class KanbanModule { }

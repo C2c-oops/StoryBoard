@@ -38,6 +38,7 @@ import { BoardService } from '../board.service';
     </div>
   `,
   styles: [
+    './dialog.scss'
   ]
 })
 export class TaskDialogComponent implements OnInit {

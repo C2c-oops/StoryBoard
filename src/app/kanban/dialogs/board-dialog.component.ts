@@ -18,8 +18,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
       </button>
     </div>
   `,
-  styles: [
-  ]
+  styles: []
 })
 export class BoardDialogComponent implements OnInit {
 

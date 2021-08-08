@@ -5,6 +5,9 @@ import { HompPageComponent } from './homp-page/homp-page.component';
 const routes: Routes = [
   {
     path : '', component : HompPageComponent
+  },
+  {
+    path : 'login', loadChildren: () => import('./user/user.module').then(m => m.UserModule)
   }
 ];
 
